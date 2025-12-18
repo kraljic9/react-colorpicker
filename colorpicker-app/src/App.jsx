@@ -2,7 +2,11 @@ import "./App.css";
 import ColorPicker from "./ColorPicker";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ColorPicker />
+    </>
+  );
 }
 
 export default App;
