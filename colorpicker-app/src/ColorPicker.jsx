@@ -1,11 +1,24 @@
+import { useState } from "react";
+
 function ColorPicker() {
+  const [currentColor, setCurrentColor] = useState("#FFFFFF");
+
+  // Change the currentColor value to the event target value
+  function handleColorChange(e) {
+    setCurrentColor(e.target.value);
+  }
+
   return (
     <>
       <div className="colorPicker-container">
-        <div className="colorPicker-block">
-          <p className="colorPicker-text"></p>
+        <h1>Color Picker App</h1>
+        <div
+          className="colorPicker-block"
+          style={{ backgroundColor: `${currentColor}` }}
+        >
+          <p className="colorPicker-text">Current color: {currentColor}</p>
         </div>
-        <input type="color" />
+        <input type="color" onChange={handleColorChange} />
       </div>
     </>
   );
